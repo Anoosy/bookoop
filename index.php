@@ -1,0 +1,51 @@
+<?php
+require_once "book.php";
+
+$ghostBook = new Book('localhost','root','R@@t','bookdb','booktable');
+$row = $ghostBook->getPost();
+$ghostBook->savePost();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сomments page</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <div class="alignment">
+        <h1>Добавить комментарий</h1>
+        <div class="showComment">
+            <?php foreach($row as $item): ?>
+                <div class="showComment__item">
+                    <p><?php echo $item['name'] ?></p>
+                    <p>
+                        <?php echo $item['text'] ?>
+                    </p> 
+                    <p><?php echo date("d.m.y H:i:s",$item['date']); ?></p>
+                </div>
+            <?php endforeach; ?>
+            <!-- <div class="showComment__item">
+                <p>Имя</p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Totam magni qui odit quibusdam animi dolorem, mollitia nisi repellendus 
+                    iste maiores saepe necessitatibus? Incidunt delectus error ipsa sequi, 
+                    necessitatibus nam quam!
+                </p> 
+                <p>21.08.20 18:39</p>
+            </div> -->
+        </div>
+        <div class="addComment">
+            <form action="index.php" method="POST">
+                <p>Введите ваше имя: </p>
+                <input type="text" name="name">
+                <p>Введите коментарий: </p>
+                <textarea name="text" cols="30" rows="10"></textarea>
+                <input type="submit" value="Добавить комментарий">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
