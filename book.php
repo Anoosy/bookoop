@@ -32,7 +32,6 @@ class Book{
 	}
 	public function getPost(){
 		$mysqli = new mysqli($this->host, $this->login, $this->password, $this->db);
-		// $mysqli = new mysqli('localhost','root','R@@t','bookdb');
 		$res = $mysqli->query("SELECT id,text,name,date FROM `".$this->table."` ORDER BY id DESC");
 		$mysqli->close();
 		return $res->fetch_all(MYSQLI_ASSOC);
