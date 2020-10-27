@@ -26,16 +26,6 @@ $ghostBook->savePost();
                     <p><?php echo date("d.m.y H:i:s",$item['date']); ?></p>
                 </div>
             <?php endforeach; ?>
-            <!-- <div class="showComment__item">
-                <p>Имя</p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Totam magni qui odit quibusdam animi dolorem, mollitia nisi repellendus 
-                    iste maiores saepe necessitatibus? Incidunt delectus error ipsa sequi, 
-                    necessitatibus nam quam!
-                </p> 
-                <p>21.08.20 18:39</p>
-            </div> -->
         </div>
         <div class="addComment">
             <form action="index.php" method="POST">
