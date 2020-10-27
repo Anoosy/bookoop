@@ -1,7 +1,7 @@
 <?php
 require_once "book.php";
 
-$ghostBook = new Book('localhost','root','R@@t','bookdb','booktable');
+$ghostBook = new Book('localhost','login','password','база данных','таблица');
 $row = $ghostBook->getPost();
 $ghostBook->savePost();
 ?>
