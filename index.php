@@ -1,6 +1,6 @@
 <?php
 require_once "book.php";
-
+//
 
 $ghostBook = new Book('localhost','login','password','база данных','таблица');
 // Вызов функции для вывода данных с базы данных
